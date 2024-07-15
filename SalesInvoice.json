@@ -1,0 +1,149 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "sl_trans_invoice_hdr",
+          "responseFieldName": "salesInvoice",
+          "fieldsRequired":"invoice_no, invoice_type, trans_type, booking_date, net_amt, dealtype_code, dispatch_date, booking_no, timestamptostring(invoice_date) invoice_date, distributor_code, dealer_code, truck_number, gross_wt, tare_wt, broker_code, net_wt, factory_weight, grn_no, invoice_no, order_type,  del_add, city_code, state_code, locality, voucher_code, eway_bill_date, eway_bill, ship_to_cd",
+          "uniqueInvoiceIdentifier": "invoice_no",
+          "uniqueRowIdentifier": "invoice_no"
+        },
+        {
+          "tableName":"sl_trans_inv_size_detail",
+          "responseFieldName":"invoiceSize",
+          "fieldsRequired":"uniq_code,  invoice_no, booking_no, invoice_no,  item_code, size_code, quality, no_pcs, uom_for_items, qty, booking_rate, uniq_code, discount_on, discount_amt, dis_type, bk_rate, itemqtyamount, booking_uniq, hsn",
+          "uniqueInvoiceIdentifier":"invoice_no",
+          "uniqueRowIdentifier": "uniq_code"
+        }
+ 
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        
+        {
+          "responseFieldName": "salesInvoice",
+          "tableName":  "sl_trans_invoice_hdr",
+          "fieldsRequired": {
+            "invoice_type":"string",
+            "trans_type":"string",
+            "booking_date":"string",
+            "dispatch_date":"string",
+            "booking_no":"string",             
+            "invoice_date":"date",
+            "distributor_code":"number",
+            "dealtype_code":"number",
+            "dealer_code":"number",
+            "truck_number":"string",
+            "gross_wt":"number",
+            "tare_wt":"number",
+            "broker_code":"number",
+            "net_wt":"number",
+            "factory_weight":"number",
+            "party_weight":"number",
+            "grn_no":"string",
+            "invoice_no":"string",
+            "order_type":"number", 
+            "del_add":"number",
+            "city_code":"number",
+            "state_code":"number", 
+            "locality":"number",                                       
+            "voucher_code":"string",
+            "eway_bill_date":"date", 
+            "eway_bill":"string",
+            "ship_to_cd":"string"
+           
+
+          },
+        
+          "lovFields": {
+            
+              "BROKER_CODE": {
+                "masterName": "sl_mst_broker",
+                "columnsRequired": "broker_code, broker_name"
+              },
+            
+              "DISTRIBUTOR_CODE": {
+                "masterName": "sl_mst_distributor",
+                "columnsRequired": "distributor_code, distributor_name"
+              },
+              "DEALER_CODE": {
+                "masterName": "sl_mst_external_entity",
+                "columnsRequired": "external_entity_code, external_entity_name"
+              },             
+              "DEALTYPE_CODE": {
+                "masterName": "pur_mst_dealtype",
+                "columnsRequired": "dealtype_code, dealtype"
+              },
+              "DEL_ADD": {
+                "masterName": "sl_mst_del_site",
+                "columnsRequired": "del_site_code, add_1"
+              }
+              
+             
+          },
+          "uniqueRowIdentifier": "invoice_no",
+          "uniqueInvoiceIdentifier": "invoice_no"
+        },
+      
+     
+    {
+      
+      "responseFieldName": "invoiceSize",
+      "tableName": "sl_trans_inv_size_detail",
+      "typeArray": true,
+      "fieldsRequired": {
+        "booking_no":"string",
+        "item_code":"number",
+        "size_code":"number",
+        "quality":"number",
+        "no_pcs":"number",
+        "uom_for_items":"number", 
+        "qty":"number",
+        "bk_rate":"number",
+        "booking_rate":"number",
+        "amount":"number",
+        "dis_type":"string",
+        "discount_on":"string",
+        "itemqtyamount":"number",
+        "discount_amt":"number",
+        "hsn":"string"
+        
+
+    },
+    "lovFields": {
+
+
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      },
+      "UOM_FOR_ITEMS":{
+        "masterName": "sl_mst_uom",
+        "columnsRequired": "uom_code, uom"
+      },
+
+      "SIZE_CODE": {
+        "masterName": "sl_mst_size",
+        "columnsRequired": "size_code, item_size"
+      },
+      "QUALITY": {
+        "masterName": "sl_mst_quality",
+        "columnsRequired": "quality_code, quality"
+      }
+      ,
+      "BOOKING_NO": {
+        "masterName": "SL_TRANS_BOOKING_HDR",
+        "columnsRequired": "booking_code, booking_code"
+      }
+    
+    },
+
+    "uniqueRowIdentifier": "uniq_code",
+    "uniqueInvoiceIdentifier": "invoice_no"
+  }
+     
+      ]
+    }
+}
+  

@@ -1,0 +1,112 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "PUR_TRANS_INGOT_ISSUE_hdr",
+          "responseFieldName": "issueHdr",
+          "fieldsRequired":"issue_code, timestamptostring(issue_date)  issue_date, emp_cd, d_code, req_type, req_code, dept_code",
+          "uniqueIssueIdentifier": "issue_code",
+          "uniqueRowIdentifier": "issue_code"
+        },
+
+        {
+          "tableName":"PUR_TRANS_INGOT_ISSUE",
+          "responseFieldName":"issueDetail",
+          "fieldsRequired":"id, item_code, uom_code, size_code, quality_code, no_of_pcs, cost_code , actual_bal, qty, rate",
+          "uniqueIssueIdentifier":"issue_code",
+          "uniqueRowIdentifier": "id"
+        }
+ 
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        
+        {
+          "responseFieldName": "issueHdr",
+          "tableName":  "PUR_TRANS_INGOT_ISSUE_hdr",
+          "fieldsRequired": {
+                         
+            "issue_date":"date",
+            "req_code":"string",
+            "dept_code":"number",
+            "emp_cd":"string",
+            "d_code":"number",
+            "req_type": "string"
+          },
+        
+          "lovFields": {
+            
+              "DEPT_CODE": {
+                "masterName": "sl_mst_department",
+                "columnsRequired": "dept_code, dept_name"
+              },
+              "EMPLOYEE_CODE": {
+                "masterName": "sl_mst_employee",
+                "columnsRequired": "employee_code, employee_name"
+              }
+                ,
+             "D_CODE": {
+              "masterName": "sl_mst_division",
+               "columnsRequired": "d_code, division_code"
+               }
+ 
+
+ 
+          },
+       
+          "uniqueRowIdentifier": "issue_code",
+          "uniqueIssueIdentifier": "issue_code"
+          
+        },
+          
+    {
+      
+      "responseFieldName": "issueDetail",
+      "tableName": "PUR_TRANS_INGOT_ISSUE",
+      "typeArray": true,
+      "fieldsRequired": {
+        
+        "item_code":"number",
+        "size_code":"number",
+        "quality_code":"number",
+        "no_of_pcs":"number",
+        "uom_code":"number", 
+        "cost_code":"number",    
+        "actual_bal":"number",
+        "qty":"number",
+        "rate":"number"
+    },
+    "lovFields": {
+
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      },
+      "UOM_CODE":{
+        "masterName": "sl_mst_uom",
+        "columnsRequired": "uom_code, uom"
+      },
+
+      "SIZE_CODE": {
+        "masterName": "sl_mst_size",
+        "columnsRequired": "size_code, item_size"
+      },
+      "QUALITY_CODE": {
+        "masterName": "sl_mst_quality",
+        "columnsRequired": "quality_code, quality"
+      },
+      "COST_CODE": {
+        "masterName": "fin_mst_cost_center",
+        "columnsRequired": "cost_code, cost_desc"
+      }
+ 
+    },
+
+    "uniqueRowIdentifier": "id",
+    "uniqueIssueIdentifier":"issue_code"
+  }
+     
+      ]
+    }
+}

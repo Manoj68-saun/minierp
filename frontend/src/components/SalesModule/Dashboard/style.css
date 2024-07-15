@@ -1,0 +1,13 @@
+.pie{
+    height: 16rem;
+    width: 60rem;
+    text-align: center;
+    background-color: transparent;
+}
+
+.line{
+    height: 16rem;
+    width: 50rem;
+    text-align: center;
+    background-color: transparent;
+}

@@ -1,0 +1,19 @@
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', sans-serif;
+  min-height: 100vh !important;
+  margin: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem !important;
+  background-color: transparent;
+}
+
+/* .ant-input-number-input {
+  text-align: right !important;
+} */
+
+.ant-form .ant-form-item {
+  margin-bottom: 0rem !important;
+}

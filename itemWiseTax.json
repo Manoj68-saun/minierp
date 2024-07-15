@@ -1,0 +1,93 @@
+
+{
+    "getNdelete": {
+      "dataSources": [
+
+        {
+          "tableName": "sl_mst_item_tax_hdr",
+          "responseFieldName": "itemTax",
+          "fieldsRequired": "tax_code, hsn, timestamptostring(norm_date::timestamp)norm_date, hsn_status, timestamptostring(f_date::timestamp)f_date, timestamptostring(t_date::timestamp)t_date",
+          "uniqueTaxIdentifier": "tax_code",
+          "uniqueRowIdentifier": "tax_code"
+        },
+
+        {
+          "tableName":"sl_mst_item_tax_det",
+          "responseFieldName":"taxDet",
+          "fieldsRequired":"unique_id, tax_code, charge_code, charge_value, charge_type, charge_type_on, ref_charge, ref_on, charge_cat, use_for, deal_type, INCLUDE_COST",
+          "uniqueTaxIdentifier":"tax_code",
+          "uniqueRowIdentifier": "unique_id"
+        }
+       
+      ]
+    },
+    
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "itemTax",
+          "tableName": "sl_mst_item_tax_hdr",
+          "fieldsRequired":{
+            "hsn":"string", 
+            "norm_date":"date",
+            "hsn_status":"string",
+            "f_date":"date",
+            "t_date":"date"
+           
+          
+          },
+          "lovFields": {
+            "HSN": {
+              "masterName": "sl_mst_item",
+              "columnsRequired": "hsn, hsn"
+            }
+          
+          },
+          "uniqueRowIdentifier": "tax_code",
+          "uniqueTaxIdentifier": "tax_code"
+        },
+    {
+      
+      "responseFieldName": "taxDet",
+      "tableName": "sl_mst_item_tax_det",
+      "typeArray": true,
+      "fieldsRequired": {
+         "charge_code":"number",
+         "charge_value":"number",
+         "charge_type":"string",
+         "charge_type_on":"string",
+         "ref_charge":"string",
+         "ref_on":"string", 
+         "charge_cat":"number",
+         "use_for":"string", 
+         "deal_type":"number",
+         "include_cost":"string"
+    },
+    "lovFields": {
+      "CHARGE_CODE": {
+        "masterName": "sl_mst_charge",
+        "columnsRequired": "charge_code, charge_desc"
+      },
+
+      "REF_CHARGE": {
+        "masterName": "sl_mst_charge",
+        "columnsRequired": "charge_code, charge_desc"
+      },
+      "DEAL_TYPE": {
+        "masterName": "pur_mst_dealtype",
+        "columnsRequired": "dealtype_code, dealtype"
+      }
+      
+
+
+    },
+    "uniqueRowIdentifier": "unique_id",
+    "uniqueTaxIdentifier": "tax_code"
+  }
+
+       
+        
+      ]
+    }
+  }
+  

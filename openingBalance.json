@@ -1,0 +1,94 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+           "tableName": "sl_item_opening_balance",
+           "responseFieldName": "openingBalance",
+           "fieldsRequired":"ssh_code, timestamptostring(stock_date)  stock_date, store_cd",
+            "uniqueOpeningIdentifier": "ssh_code",
+            "uniqueRowIdentifier": "ssh_code"
+        },
+
+        {
+          "tableName":"sl_item_opening_balance_det",
+          "responseFieldName":"openingDetail",
+          "fieldsRequired":"uniq_code, item_code, uom_code, size_code, quality_code, pcs, quantity, avg_wt, rate, amt",
+          "uniqueOpeningIdentifier":"ssh_code",
+          "uniqueRowIdentifier": "uniq_code"
+        }
+ 
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        
+        {
+          "responseFieldName": "openingBalance",
+          "tableName":  "sl_item_opening_balance",
+          "fieldsRequired": {
+                         
+            "stock_date":"date",
+            "store_cd":"number"
+          },
+        
+          "lovFields": {
+            
+              "STORE_CODE": {
+                "masterName": "pur_mst_store",
+                "columnsRequired": "store_code, store_name"
+              }
+ 
+          },
+          "uniqueRowIdentifier": "ssh_code",
+          "uniqueOpeningIdentifier": "ssh_code"
+          
+        },
+          
+    {
+      
+      "responseFieldName": "openingDetail",
+      "tableName": "sl_item_opening_balance_det",
+      "typeArray": true,
+      "fieldsRequired": {
+        
+        "item_code":"number",
+        "size_code":"number",
+        "quality_code":"number",
+        "pcs":"number",
+        "uom_code":"number", 
+        "quantity":"number",
+        "avg_wt":"number",
+        "rate":"number",
+        "amt":"number"
+    },
+    "lovFields": {
+
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      },
+      "UOM_CODE":{
+        "masterName": "sl_mst_uom",
+        "columnsRequired": "uom_code, uom"
+      },
+
+      "SIZE_CODE": {
+        "masterName": "sl_mst_size",
+        "columnsRequired": "size_code, item_size"
+      },
+      "QUALITY_CODE": {
+        "masterName": "sl_mst_quality",
+        "columnsRequired": "quality_code, quality"
+      }
+ 
+    },
+
+    "uniqueRowIdentifier": "uniq_code",
+    "uniqueOpeningIdentifier":"ssh_code"
+  }
+     
+      ]
+    }
+}
+
+  

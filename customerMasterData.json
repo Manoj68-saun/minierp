@@ -1,0 +1,123 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "sl_mst_distributor",
+          "responseFieldName": "customerMaster",
+          "fieldsRequired": "distributor_code, distributor_name, address, hsn, pan_no, s_tax_no, payment_days, monthly_intrest, yearly_intrest, account_code, ecc_no, pin_no, cst_no, acc_group_code, ext_entity_type_code, city, locality_code",
+          "uniqueCustomerIdentifier": "distributor_code",
+          "uniqueRowIdentifier": "distributor_code"
+        },
+        {
+          "tableName": "sl_mst_distributor_email",
+          "responseFieldName": "contactDetails",
+          "fieldsRequired": "unique_code, distributor_code, contact_person, contact_no, email_id, department",
+          "uniqueCustomerIdentifier": "distributor_code",
+          "uniqueRowIdentifier": "unique_code"
+        },
+        {
+          "tableName": "sl_mst_del_site",
+          "responseFieldName": "deliveryDetails",
+          "fieldsRequired": "del_site_code, cust_code, name, add_1, pin, gst_number, city_code, locality_code",
+          "uniqueCustomerIdentifier": "cust_code",
+          "uniqueRowIdentifier": "del_site_code"
+        }
+       
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "customerMaster",
+          "tableName": "sl_mst_distributor",
+          "fieldsRequired": {
+            "distributor_name": "string",
+            "address": "string",
+            "hsn": "string",
+            "pan_no": "string",
+            "s_tax_no": "string",
+            "payment_days": "number",
+            "monthly_intrest": "number",
+            "yearly_intrest": "number",
+            "account_code": "string",
+            "ecc_no":"string",
+            "pin_no":"number",
+            "cst_no":"string",
+            "acc_group_code":"number",
+            "ext_entity_type_code":"number",
+            "city":"number",
+            "locality_code":"number"
+          },
+          "lovFields": {
+            "ACC_GROUP_CODE": {
+              "masterName": "v_debitor_account",
+              "columnsRequired": "group_code, group_name"
+            },
+            "EXT_ENTITY_TYPE_CODE": {
+              "masterName": "sl_mst_external_entity_type",
+              "columnsRequired": "external_entity_type_code, external_entity_type"
+            },
+            "CITY": {
+              "masterName":  "sl_mst_city",
+              "columnsRequired": "city_code, city_name"
+            },
+            "LOCALITY_CODE": {
+              "masterName": "sl_mst_locality",
+              "columnsRequired": "locality_code, description"
+            }
+           
+          
+           },
+          "uniqueRowIdentifier": "distributor_code",
+          "uniqueCustomerIdentifier": "distributor_code"
+        },
+        {
+          "responseFieldName": "contactDetails",
+          "tableName": "sl_mst_distributor_email",
+          "typeArray": true,
+          "fieldsRequired": {
+            
+            "contact_person": "string",
+            "contact_no":"number",
+            "email_id":"string",
+            "department":"string"
+           
+           },
+          "uniqueRowIdentifier": "unique_code",
+          "uniqueCustomerIdentifier": "distributor_code"
+        },
+        {
+            "responseFieldName": "deliveryDetails",
+            "tableName": "sl_mst_del_site",
+            "typeArray": true,
+            "fieldsRequired": {
+              "name":"string",
+              "add_1":"string",
+              "pin":"number",
+              "gst_number":"string",
+              "city_code":"number",
+              "locality_code":"number"
+             
+             },
+            "lovFields": {
+              "CITY_CODE": {
+                "masterName": "sl_mst_city",
+                "columnsRequired": "city_code, city_name"
+              },
+              "LOCALITY_CODE": {
+                "masterName": "sl_mst_locality",
+                "columnsRequired": "locality_code, description"
+              }
+
+
+            },
+
+            "uniqueRowIdentifier": "del_site_code",
+            "uniqueCustomerIdentifier": "cust_code"
+        }
+         
+        
+      ]
+    }
+  }
+  

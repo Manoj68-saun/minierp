@@ -1,0 +1,102 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "PUR_RMDEAL_HDR",
+          "responseFieldName": "poHdr",
+          "fieldsRequired":"rmd_code, timestamptostring(deal_date), deal_type_cd, currency_cd, currency_rate1, party_code",
+          "uniqueReqIdentifier": "rmd_code",
+          "uniqueRowIdentifier": "rmd_code"
+        },
+        {
+          "tableName":"PUR_RMDEAL_DET",
+          "responseFieldName":"poDetail",
+          "fieldsRequired":"item_code, total_qty, rate, amount, quality_code, size_code, unique_code, uom_code, net_landed, requisition_code, store_cd, discount, dis_type, requisition_recno, h_tax, gross_tax_value, amount2, rate1, discount_on, remarks",
+          "uniqueReqIdentifier":"rmd_code",
+          "uniqueRowIdentifier": "unique_code"
+        }
+   
+      
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        
+        {
+          "responseFieldName": "poHdr",
+          "tableName":  "PUR_RMDEAL_HDR",
+          "fieldsRequired": {
+                         
+            "deal_date":"date",
+            "deal_type_cd":"number",
+            "currency_cd":"number",
+            "currency_rate1":"number",
+            "party_code":"number"
+          },
+          "lovFields": {
+
+            "DEAL_TYPE": {
+              "masterName": "pur_mst_dealtype",
+              "columnsRequired": "dealtype_code, dealtype"
+            },
+
+            "CURRENCY_CODE": {
+              "masterName": "currency_mst",
+              "columnsRequired": "currency_code, currency"
+            },
+           
+            "PARTY_CODE": {
+              "masterName": "pur_mst_party",
+              "columnsRequired": "party_code, party_name"
+            }
+          },
+          "uniqueRowIdentifier": "rmd_code",
+          "uniqueReqIdentifier": "rmd_code"
+          
+        },
+        
+          
+    {
+      
+      "responseFieldName": "poDetail",
+      "tableName": "PUR_RMDEAL_DET",
+      "typeArray": true,
+      "fieldsRequired": {
+        "item_code":"number",
+        "total_qty":"number",
+        "rate":"number",
+        "amount":"number",
+        "quality_code":"number",
+        "size_code":"number",
+        "uom_code":"number",
+        "net_landed":"number",
+        "requisition_code":"number",
+        "store_cd":"number",
+        "discount":"number",
+        "dis_type":"string",
+        "requisition_recno":"string",
+        "h_tax":"string",
+        "gross_tax_value":"number",
+        "amount2":"number",
+        "rate1":"number",
+        "discount_on":"string",
+        "remarks":"string"
+
+    },
+    "lovFields": {
+
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      }
+ 
+    },
+
+    "uniqueRowIdentifier": "unique_code",
+    "uniqueReqIdentifier":"rmd_code"
+  }
+
+     
+      ]
+    }
+}

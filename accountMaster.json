@@ -1,0 +1,59 @@
+
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "fin_mst_account",
+          "responseFieldName": "accountHeader",
+          "fieldsRequired": "account_code, account_name, group_code, add1, add2,city_code, pin_code, ph1, pan_no, email, bank_account_number, bank_ifc_code, account_used",
+          "uniqueAccIdentifier": "account_code",
+          "uniqueRowIdentifier": "account_code"
+        }
+    
+       
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "accountHeader",
+          "tableName": "fin_mst_account",
+          "fieldsRequired": {
+            
+           "account_code":"number", 
+           "account_name":"string", 
+           "group_code":"string",
+           "add1":"string",
+           "add2":"string",
+           "city_code":"number", 
+           "pin_code":"string", 
+           "ph1":"string",
+           "pan_no":"string",  
+           "email":"string", 
+           "bank_account_number":"string", 
+           "bank_ifc_code":"string",
+           "account_used":"string",
+           "parent_group":"string",
+           "uniq_code":"string"
+           
+          },
+          "lovFields": {
+            "GROUP_CODE": {
+              "masterName": "V_ACC_GROUP",
+              "columnsRequired": "group_code, account_name"
+            },
+            "CITY_CODE": {
+              "masterName": "sl_mst_city",
+              "columnsRequired": "city_code, city_name"
+            }
+        },
+          "uniqueRowIdentifier": "account_code",
+          "uniqueAccIdentifier": "account_code"
+        }
+    
+       
+        
+      ]
+    }
+  }
+  

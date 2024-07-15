@@ -1,0 +1,112 @@
+.SiteLayoutBackground{
+    height: 2rem;
+    justify-content: space-between !important;
+}
+
+.Modal{
+    height: 30rem !important;
+}
+.StyledButtonPdf{
+    background-color: white;
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center;
+    white-space: nowrap;
+    font-weight : 600;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.StyledButtonPdf:hover{
+    color: white !important;
+    background-color: rgba(255,163,77,1);
+    box-shadow: 2px 2px 4px 4px rgba(58, 57, 57, 0.103), 0 3px 6px 0 rgba(112, 111, 111, 0.1);
+}
+.StyledButtonPdf:focus{
+    outline: none;
+}
+.StyledButtonX{
+    background-color: blueviolet;
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center;
+    white-space: nowrap;
+    font-weight : 600;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    /* border-radius: 40px; */
+    background-color: white;
+    border: none;
+    outline: none;
+}
+.StyledButtonX:hover{
+    color: white !important;
+    background-color: rgba(255,163,77,1);
+    /* transform: translateY(-0.5rem); */
+    /* transition: 0.3sec; */
+    box-shadow: 2px 2px 4px 4px rgba(58, 57, 57, 0.103), 0 3px 6px 0 rgba(112, 111, 111, 0.1);
+}
+.StyledButtonX:focus{
+    outline: none;
+}
+
+.Col{
+    margin-bottom: 1rem !important;
+    height: 2.3rem !important;
+    transition: 0.3sec;
+    text-align: left;
+    font-size: 0.9rem !important;
+    line-height: 2rem;
+    /* background-color: blue; */
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    /* background-color: #C0E1F7; */
+}
+
+.Label{
+    font-weight: bolder !important;
+    color: #2EA2EC;
+}
+
+.InvalidLabel{
+    font-weight: bolder !important;
+    color: red;
+}
+
+.Input{
+    background-color: white;
+    border-color: white;
+    box-Shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 0.5rem 1rem !important;
+}
+
+.Input:focus{
+    background-color: white;
+    border-color: #2EA2EC;
+    box-Shadow: 0 8px 16px 0 rgba(32, 120, 179, 0.2);
+    padding: 0.5rem 1rem !important;
+}
+.InvalidInput{
+    background-color: white;
+    padding: 0.5rem 1rem !important;
+    box-Shadow: 0 8px 16px 0 rgba(223, 32, 32, 0.527);
+}
+.InvalidInput:focus{
+    background-color: white;
+    border-color: #2EA2EC;
+    box-Shadow: 0 8px 16px 0 rgba(32, 120, 179, 0.2);
+    padding: 0.5rem 1rem !important;
+}
+
+
+@media only screen and (min-width: 992px){
+    .StyledIcon{
+        font-size: 1.2rem;
+    }
+}

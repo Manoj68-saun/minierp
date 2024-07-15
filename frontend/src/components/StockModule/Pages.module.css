@@ -1,0 +1,286 @@
+.Title{
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin: 0rem 1rem;
+    color: #1F3247;
+}
+
+.Label {
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+    font-size: 12px !important;
+    text-transform: capitalize; /* Change to capitalize */
+  }
+
+.header-item {
+    float: 'left';
+    padding-left: 50px;
+    /* padding: 10px 20px; */
+    /* font-size: 18px; */
+    font-weight: bold;
+  }
+  .header-item1 {
+    float: 'left';
+    padding-left: 70px;
+    /* padding: 10px 20px; */
+    /* font-size: 18px; */
+    font-weight: bold;
+  }
+
+.Remove{
+    color: red;
+    font-size: 1.2rem;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 40px;
+}
+
+.Add{
+    color: #2EA2EC;
+    font-size: 1.2rem;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 40px;
+}
+
+.Data{
+    font-weight: bolder !important;
+    color: #355576;
+     text-align: right; 
+    float: right; 
+    font-size: 0.6rem;
+    margin-left: px;
+    text-transform: none;
+    /* border:2px solid red; */
+    /* text-align: right; */
+}
+
+.Row{
+    justify-content: flex-end;
+}
+
+.RowP{
+    justify-content: space-evenly;
+    height: 100%;
+    
+}
+.cardBodyStyle  {
+    padding: '4px',
+    
+    
+  }
+
+.RowS{
+    justify-content: center;
+    margin: 2rem 0rem;
+}
+
+.RowD{
+    justify-content: space-evenly;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    margin: 0rem 1rem;
+    padding: 1rem 1rem 0.5rem 0rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+
+.RowDE{
+ 
+    justify-content: start;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    margin: 0rem 0rem;
+    padding: 0.5rem 1rem;
+    box-shadow: rgba(64, 64, 168, 0.2) 0px 7px 29px 0px;
+}
+
+.RowDEX{
+    justify-content: start;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 20px;
+    margin: 0rem 1rem;
+    padding: 0.5rem 1rem;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.Name{
+    font-weight: bolder !important;
+    color: #1777C4;
+    font-size: 1rem;
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.spanP{
+    padding: 0.8rem 1rem;
+    min-width: 100%;
+}
+.Col{
+    background-color: transparent;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    border-radius: 40px;
+    
+    margin: 0rem 0rem 0.6rem 0rem;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+
+.ColP{
+    background-color: white;
+    padding: 0.5rem;
+    justify-content: center;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.PageButton{
+    text-align: center;
+    white-space: nowrap;
+    color: white;
+    width: 80%;
+    font-weight : 800;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 40px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    background-color: #355576;
+}
+
+.PageButton2{
+    text-align: center;
+    white-space: nowrap;
+    color: #355576;
+    width: 80%;
+    font-weight : 900;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.CommonButton{
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.Card{
+    height: 1rem;
+    margin: 0rem 0.5rem;
+    /* border:2px solid green;  */
+    background-color: transparent;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.EditView{
+    height: 100% !important;
+    margin-top: 0rem;
+    background-color: transparent;
+    height: 100%;
+
+}
+.component-container{
+    overflow-x: auto;
+    width: 900px;
+    
+  }
+
+.ProfileButton{
+    text-align: center;
+    white-space: nowrap;
+    color: #355576;
+    width: 100%;
+    font-weight : 900;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 40px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    background-color: #79caf3c7;
+}
+.ProfileButtonn:hover {
+    box-shadow: 10px 0px 0px 2px #264a9f;
+    border:5px solid green
+  }
+
+.ProfileButtonTax{
+    text-align: center;
+    white-space: nowrap;
+    color: #355576;
+    width: 60%;
+    margin-top: 0rem;
+    font-weight : 900;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 40px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    background-color: #79caf3c7;
+}
+
+.ProfileButtonF{
+    text-align: center;
+    white-space: nowrap;
+    color: #355576;
+    width: 60%;
+    font-weight : 900;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 40px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-top: 0.7rem;
+    background-color: #79caf3c7;
+}
+.required ::after{
+    content: " *";
+    color: red;
+    
+}
+.ant-input-number-input1{
+    text-align: right !important;
+
+}
+
+@media only screen and (min-width: 992px) {
+    .Label{
+        font-size: 0.7rem;
+        
+    }
+    
+    .Data{
+        font-size: 0.8rem;
+    }
+
+    .Card{
+        height: 2rem;
+    }
+}
+ /* .ant-form-item {
+    margin-bottom: -5rem !important;
+} */

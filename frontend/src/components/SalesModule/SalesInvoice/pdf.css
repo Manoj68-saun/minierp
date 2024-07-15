@@ -1,0 +1,47 @@
+.your-table {
+    font-size: 0.7rem;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.your-table th,
+.your-table td {
+    border: 1px solid black;
+    padding: 1px 9px 0px 10px;
+    text-align: left;
+}
+
+.your-table td:last-child {
+    text-align: end;
+}
+
+.your-table th {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.your-table tbody th {
+    border-top: none;
+}
+
+.your-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.your-table thead tr th{
+    border-left: none;
+    /* border-right: none; */
+}
+
+.your-table tbody tr td{
+    border-left: none;
+    /* border-right: none; */
+}
+
+.your-table tbody td:nth-child(1) {
+    width:50%;
+  }
+  
+
+  .your-table tbody td:nth-child(2) {
+    border-right: none;
+  }

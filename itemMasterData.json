@@ -1,0 +1,148 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "sl_mst_item",
+          "responseFieldName": "itemMaster",
+          "fieldsRequired": "item_code, item_name, item_uom, item_category, hsn, item_group_cd, item_subgroup_code, item_rating_code, actual_name, item_min_qty, item_max_qty, item_max_qty, reorder_level, avg_reorderqty",
+          "uniqueItemIdentifier": "item_code",
+          "uniqueRowIdentifier": "item_code"
+        },
+
+        {
+          "tableName": "sl_mst_item_size_det",
+          "responseFieldName": "itemSize",
+          "fieldsRequired": "uniq_code, item_code, size_code",
+          "uniqueItemIdentifier": "item_code",
+          "uniqueRowIdentifier": "uniq_code"
+        },
+
+        {
+          "tableName": "sl_mst_item_qual_det",
+          "responseFieldName": "gradeDetails",
+          "fieldsRequired": "uniq_code, item_code, quality_code",
+          "uniqueItemIdentifier": "item_code",
+          "uniqueRowIdentifier": "uniq_code"
+        },
+        
+        {
+          "tableName": "sl_mst_item_account_det",
+          "responseFieldName": "accountDetails",
+          "fieldsRequired": "uniq_code, item_code, account_code",
+          "uniqueItemIdentifier": "item_code",
+          "uniqueRowIdentifier": "uniq_code"
+        }
+       
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "itemMaster",
+          "tableName": "sl_mst_item",
+          "fieldsRequired": {
+            "item_name":"string",
+            "item_uom": "number",
+            "item_category": "number",
+            "hsn": "string",
+            "item_group_cd": "number",
+            "item_subgroup_code": "number",
+            "item_rating_code": "number",
+            "actual_name": "string",
+            "item_min_qty": "number",
+            "item_max_qty": "number",
+            "reorder_level": "number",
+            "avg_reorderqty": "number"
+         
+         
+          
+          
+          },
+          "lovFields": {
+            "ITEM_UOM": {
+              "masterName": "sl_mst_uom",
+              "columnsRequired":  "uom_code, uom"
+            },
+            "ITEM_CATEGORY": {
+              "masterName": "sl_mst_item_category",
+              "columnsRequired": "item_category_code, item_category"
+            },
+            "ITEM_GROUP_CD": {
+              "masterName": "sl_mst_item_group",
+              "columnsRequired": "item_group_code, item_group_name"
+            },
+            "ITEM_SUBGROUP_CODE": {
+              "masterName": "sl_mst_item_sub_group",
+              "columnsRequired": "item_sub_group_code, item_sub_group_name "
+            },
+            "ITEM_RATING_CODE": {
+              "masterName": "sl_mst_item_rating",
+              "columnsRequired": "item_rating_code, item_rating"
+            }
+          
+          },
+          "uniqueRowIdentifier": "item_code",
+          "uniqueItemIdentifier": "item_code"
+        },
+        {
+          "responseFieldName": "itemSize",
+          "tableName": "sl_mst_item_size_det",
+          "typeArray": true,
+          "fieldsRequired": {
+            
+            "size_code": "number"
+            
+           
+           },
+          "lovFields": {
+            "SIZE_CODE": {
+              "masterName": "sl_mst_size",
+              "columnsRequired": "size_code, item_size"
+            }
+          },
+          "uniqueRowIdentifier": "uniq_code",
+          "uniqueItemIdentifier": "item_code"
+        },
+        {
+            "responseFieldName": "gradeDetails",
+            "tableName": "sl_mst_item_qual_det",
+            "typeArray": true,
+            "fieldsRequired": {
+
+              "quality_code": "number"
+             
+             },
+            "lovFields": {
+              "QUALITY_CODE": {
+                "masterName": "sl_mst_quality",
+                "columnsRequired": "quality_code, quality"
+              }
+            },
+            "uniqueRowIdentifier": "uniq_code",
+            "uniqueItemIdentifier": "item_code"
+          },
+          {
+            "responseFieldName": "accountDetails",
+            "tableName": "sl_mst_item_account_det",
+            "typeArray": true,
+            "fieldsRequired": {
+                
+              "account_code": "number"
+             
+             },
+            "lovFields": {
+              "ACCOUNT_CODE": {
+                "masterName": "fin_mst_account",
+                "columnsRequired": "account_code, account_name"
+              }
+            },
+            "uniqueRowIdentifier": "uniq_code",
+            "uniqueItemIdentifier": "item_code"
+          }
+       
+       
+        
+      ]
+    }
+  }
+  

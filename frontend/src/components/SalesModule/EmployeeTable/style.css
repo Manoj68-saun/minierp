@@ -1,0 +1,17 @@
+.MuiTableCell-root{
+    padding: 2px !important;
+    border: none !important;
+    font-family: 'Montserrat' !important;
+    font-weight: 450 !important;
+    /* line-height: 1.01  !important; */
+}
+
+@media only screen and (min-width: 992px){
+    .MuiTableCell-root{
+        padding: 8px !important;
+        border: none !important;
+        font-family: 'Montserrat' !important;
+        font-weight: 450 !important;
+        /* line-height: 0.10  !important; */
+    }
+}

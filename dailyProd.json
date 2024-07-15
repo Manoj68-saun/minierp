@@ -1,0 +1,137 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "SL_STOCK_STATUS_HDR",
+          "responseFieldName": "prodHdr",
+          "fieldsRequired":"ssh_code, timestamptostring(stock_date)  stock_date,  timestamptostringwithtime(from_time) from_time, timestamptostringwithtime(to_time) to_time, no_of_hrs",
+          "uniqueReqIdentifier": "ssh_code",
+          "uniqueRowIdentifier": "ssh_code"
+        },
+        {
+          "tableName":"SL_STOCK_STATUS_DET",
+          "responseFieldName":"prodDetail",
+          "fieldsRequired":"uniq_id, item_code, uom_code, size_code, quality_code, no_of_picces, quantity, rate",
+          "uniqueReqIdentifier":"ssh_code",
+          "uniqueRowIdentifier": "uniq_id"
+        },
+        {
+            "tableName":"SL_STOCK_STATUS_CONSUMPTION",
+            "responseFieldName":"prodConsumDet",
+            "fieldsRequired":"scd_code, item_code, uom_code, size_code, quality_code, no_of_picces, quantity, rate",
+            "uniqueReqIdentifier":"ssh_code",
+            "uniqueRowIdentifier": "scd_code"
+        },
+
+        {
+            "tableName":"T_ELECTRICITY_CONS_DET",
+            "responseFieldName":"prodElecDet",
+            "fieldsRequired":"uniq_id, meter_no, rate_unit, reading, current_reading, pmt_unit",
+            "uniqueReqIdentifier":"ssh_code",
+            "uniqueRowIdentifier": "uniq_id"
+        }
+      
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        
+        {
+          "responseFieldName": "prodHdr",
+          "tableName":  "SL_STOCK_STATUS_HDR",
+          "fieldsRequired": {
+                         
+            "stock_date":"date",
+            "from_time":"string",
+            "to_time":"string",
+            "no_of_hrs":"string"
+          },
+          "uniqueRowIdentifier": "Req_code",
+          "uniqueReqIdentifier": "Req_code"
+          
+        },
+          
+    {
+      
+      "responseFieldName": "prodDetail",
+      "tableName": "SL_STOCK_STATUS_DET",
+      "typeArray": true,
+      "fieldsRequired": {
+        
+        "item_code":"number",
+        "size_code":"number",
+        "quality_code":"number",
+        "no_of_picces":"number",
+        "uom_code":"number", 
+        "quantity":"number",
+        "rate":"number"
+    },
+    "lovFields": {
+
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      }
+ 
+    },
+
+    "uniqueRowIdentifier": "uniq_id",
+    "uniqueReqIdentifier":"ssh_code"
+  },
+  {
+      
+    "responseFieldName": "prodConsumDet",
+    "tableName": "SL_STOCK_STATUS_CONSUMPTION",
+    "typeArray": true,
+    "fieldsRequired": {
+      
+      "item_code":"number",
+      "size_code":"number",
+      "quality_code":"number",
+      "no_of_picces":"number",
+      "uom_code":"number", 
+      "quantity":"number",
+      "rate":"number"
+  },
+  "lovFields": {
+
+    "ITEM_CODE": {
+      "masterName": "sl_mst_item",
+      "columnsRequired": "item_code, item_name"
+    }
+
+  },
+
+  "uniqueRowIdentifier": "scd_code",
+  "uniqueReqIdentifier":"ssh_code"
+},
+
+{
+      
+    "responseFieldName": "prodElecDet",
+    "tableName": "T_ELECTRICITY_CONS_DET",
+    "typeArray": true,
+    "fieldsRequired": {
+      
+      "meter_no":"number",
+      "rate_unit":"number",
+      "reading":"number",
+      "current_reading":"number",
+      "pmt_unit":"number"
+  },
+  "lovFields": {
+
+    "METER_CODE": {
+      "masterName": "pur_mst_meter",
+      "columnsRequired": "meter_code, meter_no"
+    }
+
+  },
+
+  "uniqueRowIdentifier": "uniq_id",
+  "uniqueReqIdentifier":"ssh_code"
+}
+     
+      ]
+    }
+}

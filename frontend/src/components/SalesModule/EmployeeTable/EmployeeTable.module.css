@@ -1,0 +1,31 @@
+.TableView{
+    width: 100% !important;
+    display: block !important;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: transparent;
+}
+
+.Cell{
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    padding: 12px !important;
+}
+
+.Cell:hover{
+    color: #1777C4;
+}
+
+.Paper{
+    width: 100% !important;
+    display: block !important;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    font-weight: 900 !important;
+    text-transform: capitalize !important;
+    
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important; */
+}
+

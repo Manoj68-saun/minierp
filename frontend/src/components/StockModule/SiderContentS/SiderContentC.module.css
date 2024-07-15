@@ -1,0 +1,25 @@
+.SignInSignUpLogo{
+    width : 3rem;
+    height : 3rem; 
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    
+}
+
+.Menu{
+    background-color: rgba(255, 255, 255, 0.473);  
+    backdrop-filter: blur(20px);
+    color: #355676ef;
+    border: none;
+    font-size: 0.8rem;
+    
+    /* height: 2rem !important; */
+}
+
+@media only screen and (max-height: 640px){
+    .Menu{
+        font-size: 0.8rem;
+        padding: 0 !important;
+        font-size: 0.7rem;
+    }
+}

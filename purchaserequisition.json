@@ -1,0 +1,86 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "pur_rm_requisition_hdr",
+          "responseFieldName": "purreqHdr",
+          "fieldsRequired":"rq_code, timestamptostring(plan_date)  plan_date, timestamptostring(requirement_date)  requirement_date, dept_code, requester_code",
+          "uniqueReqIdentifier": "rq_code",
+          "uniqueRowIdentifier": "rq_code"
+        },
+        {
+          "tableName":"pur_rm_requisition_det",
+          "responseFieldName":"purreqDetail",
+          "fieldsRequired":"unique_code, item_code, uom_code, size_code, quality_code,  purpose, qty",
+          "uniqueReqIdentifier":"RQ_CODE",
+          "uniqueRowIdentifier": "unique_code"
+        }
+      
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        
+        {
+          "responseFieldName": "purreqHdr",
+          "tableName":  "pur_rm_requisition_hdr",
+          "fieldsRequired": {
+                         
+            "plan_date":"date",
+            "requirement_date":"date",
+            "dept_code":"number",
+            "requester_code":"string"
+          },
+        
+          "lovFields": {
+            
+              "DEPT_CODE": {
+                "masterName": "sl_mst_department",
+                "columnsRequired": "dept_code, dept_name"
+              },
+              "EMPLOYEE_CODE": {
+                "masterName": "sl_mst_employee",
+                "columnsRequired": "employee_code, employee_name"
+              }
+ 
+          },
+          "uniqueRowIdentifier": "rq_code",
+          "uniqueReqIdentifier": "rq_code"
+          
+        },
+          
+    {
+      
+      "responseFieldName": "purreqDetail",
+      "tableName": "pur_rm_requisition_det",
+      "typeArray": true,
+      "fieldsRequired": {
+        
+        "item_code":"number",
+        "size_code":"number",
+        "quality_code":"number",
+        
+        "qty":"number",
+        "uom_code":"number", 
+        "purpose":"string"
+        
+    },
+    "lovFields": {
+
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      }
+    
+
+      
+ 
+    },
+
+    "uniqueRowIdentifier": "unique_code",
+    "uniqueReqIdentifier":"RQ_CODE"
+  }
+     
+      ]
+    }
+}

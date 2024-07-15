@@ -1,0 +1,75 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "pur_stock_adju_hdr",
+          "responseFieldName": "stockHdr",
+          "fieldsRequired":"ssh_code, stock_date, effect, reason , trans_type",
+          "uniqueStockIdentifier": "ssh_code",
+          "uniqueRowIdentifier": "ssh_code"
+        },
+        {
+          "tableName":"pur_stock_adju_det",
+          "responseFieldName":"stockDetail",
+          "fieldsRequired":"ssd_code, ssh_code, quality_code, size_code, item_code, store_cd, uom_code ,pices, quantity , RATE",
+          "uniqueStockIdentifier":"ssh_code",
+          "uniqueRowIdentifier": "ssd_code"
+        }
+      
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        
+        {
+          "responseFieldName": "stockHdr",
+          "tableName":  "pur_stock_adju_hdr",
+          "fieldsRequired": {
+                         
+            "stock_date":"date",
+            "effect":"string",
+            "reason":"string",
+            "trans_type":"string"
+          },
+        
+        
+          "uniqueRowIdentifier": "ssh_code",
+          "uniqueStockIdentifier": "ssh_code"
+          
+        },
+          
+       {
+      
+      "responseFieldName": "stockDetail",
+      "tableName": "pur_stock_adju_det",
+      "typeArray": true,
+      "fieldsRequired": {
+        
+        "item_code":"number",
+        "size_code":"number",
+        "quality_code":"number",
+        "pices":"number",
+        "uom_code":"number", 
+        "store_cd":"string",
+        
+        "quantity":"number",
+        "rate":"number"
+    },
+    "lovFields": {
+
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      }
+    
+
+      
+    },
+
+    "uniqueRowIdentifier": "ssd_code",
+    "uniqueStockIdentifier":"ssh_code"
+       }
+     
+      ]
+    }
+}

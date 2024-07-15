@@ -1,0 +1,135 @@
+
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "sl_trans_booking_hdr",
+          "responseFieldName": "salesOrder",
+          "fieldsRequired": "booking_code, distributor_code, timestamptostring(booking_date::timestamp)booking_date, dealer_name, order_type, invoice_type_code, payment_days, del_site_code, freight_type_code,  broker_code, payment_code, tolerance, payment_amt, remarks",
+          "uniqueOrderIdentifier": "booking_code",
+          "uniqueRowIdentifier": "booking_code"
+        },
+        {
+          "tableName":"sl_trans_booking_size_detail",
+          "responseFieldName":"bookingSize",
+          "fieldsRequired":"unique_id, booking_code, item_code, size_code, quality, no_pcs, uom, discount_on, dis_type, qty, book_rate_guage, booking_rate, bk_rate,  discount_amount, tot_item_amt, net_rate, net_size_rate",
+          "uniqueOrderIdentifier":"booking_code",
+          "uniqueRowIdentifier": "unique_id"
+        }
+       
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "salesOrder",
+          "tableName": "sl_trans_booking_hdr",
+          "fieldsRequired": {
+            
+           "distributor_code":"number", 
+           "dealer_name":"number", 
+           "order_type":"number",
+           "booking_date":"date",
+           "invoice_type_code":"number",
+           "payment_days":"number", 
+           "del_site_code":"number", 
+           "auth_status":"string",
+           "freight_type_code":"number",  
+           "customer_po_no":"string", 
+           "broker_code":"number", 
+           "payment_code":"number",
+           "tolerance":"number",
+           "payment_amt":"number",
+           "remarks":"string"
+          
+          },
+          "lovFields": {
+            "DISTRIBUTOR_CODE": {
+              "masterName": "sl_mst_distributor",
+              "columnsRequired": "distributor_code, distributor_name"
+            },
+            "DEALER_NAME": {
+              "masterName": "sl_mst_external_entity",
+              "columnsRequired": "external_entity_code, external_entity_name"
+            },
+            "ORDER_TYPE": {
+              "masterName": "sl_mst_order_type",
+              "columnsRequired": "order_type_code, order_type"
+            },
+            "INVOICE_TYPE_CODE": {
+              "masterName": "sl_mst_invoice_type",
+              "columnsRequired": "invoice_type_code, invoice_type"
+            },
+            "DEL_SITE_CODE": {
+              "masterName": "sl_mst_del_site",
+              "columnsRequired": "del_site_code, add_1"
+            },
+            "FREIGHT_TYPE_CODE": {
+                "masterName": "sl_mst_freight_type",
+                "columnsRequired": "freight_type_code, freight_type"
+              },
+              "BROKER_CODE": {
+                "masterName": "sl_mst_broker",
+                "columnsRequired": "broker_code, broker_name"
+              },
+              "PAYMENT_CODE": {
+                "masterName": "sl_mst_payment_term",
+                "columnsRequired": "payment_code, payment_desc"
+              }
+          },
+          "uniqueRowIdentifier": "booking_code",
+          "uniqueOrderIdentifier": "booking_code"
+        },
+    {
+      
+      "responseFieldName": "bookingSize",
+      "tableName": "sl_trans_booking_size_detail",
+      "typeArray": true,
+      "fieldsRequired": {
+       "item_code":"number", 
+       "size_code":"number", 
+       "quality":"number",
+       "uom":"number",
+       "no_pcs":"number",
+       "qty":"number", 
+       "book_rate_guage":"number", 
+       "discount_on":"string",
+       "discount_amount":"number",
+       "bk_rate":"number",
+       "booking_rate":"number", 
+       "dis_type":"string",
+       "tot_item_amt":"number",
+       "net_rate":"number",
+       "net_size_rate":"number"
+    },
+    "lovFields": {
+      "ITEM_CODE": {
+        "masterName": "sl_mst_item",
+        "columnsRequired": "item_code, item_name"
+      },
+
+      "SIZE_CODE": {
+        "masterName": "sl_mst_size",
+        "columnsRequired": "size_code, item_size"
+      },
+      "QUALITY": {
+        "masterName": "sl_mst_quality",
+        "columnsRequired": "quality_code, quality"
+      },
+      "UOM": {
+        "masterName": "sl_mst_uom",
+        "columnsRequired": "uom_code, uom"
+      }
+
+
+    },
+    "uniqueRowIdentifier": "unique_id",
+    "uniqueOrderIdentifier": "booking_code"
+  }
+
+       
+        
+      ]
+    }
+}
+  

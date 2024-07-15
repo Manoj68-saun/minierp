@@ -1,0 +1,87 @@
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "sl_mst_external_entity",
+          "responseFieldName": "dealerMaster",
+          "fieldsRequired": "external_entity_code, external_entity_name, external_entity_group_code, address, ext_entity_type_code, locality_code, city, pin_no, pan_no, cst_no, int_per",
+          "uniqueDealerIdentifier": "external_entity_code",
+          "uniqueRowIdentifier": "external_entity_code"
+
+        },
+        {
+          "tableName": "sl_mst_dealer_dist_det",
+          "responseFieldName": "customerDetails",
+          "fieldsRequired": " unique_code, external_entity_code, distributor_code",
+          "uniqueDealerIdentifier":  "external_entity_code",
+          "uniqueRowIdentifier": "unique_code"
+        }
+    
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "dealerMaster",
+          "tableName":  "sl_mst_external_entity",
+          "fieldsRequired": {
+            "external_entity_name":"string",
+            "ext_entity_type_code":"number",
+            "external_entity_group_code":"number",
+            "address": "string",
+            "city": "number",
+            "locality_code": "number",
+            "pan_no": "string",
+            "int_per": "number",
+            "cst_no": "string",
+            "pin_no": "number" 
+          
+          },
+          "lovFields": {
+
+            "EXT_ENTITY_TYPE_CODE": {
+              "masterName": "sl_mst_external_entity_type",
+              "columnsRequired": "external_entity_type_code, external_entity_type"
+            },
+
+            "EXTERNAL_ENTITY_GROUP_CODE": {
+              "masterName": "sl_mst_external_entity_group",
+              "columnsRequired": "external_entity_group_code, external_entity_group_name"
+            },
+            "LOCALITY_CODE": {
+              "masterName": "sl_mst_locality",
+              "columnsRequired": "locality_code, description"
+            },
+            "CITY": {
+              "masterName": "sl_mst_city",
+              "columnsRequired": "city_code, city_name"
+            }
+          
+          },
+          "uniqueRowIdentifier": "external_entity_code",
+          "uniqueDealerIdentifier":"external_entity_code"
+        },
+        {
+          "responseFieldName": "customerDetails",
+          "tableName": "sl_mst_dealer_dist_det",
+          "typeArray": true,
+          "fieldsRequired": {
+            
+            "distributor_code": "number"
+           
+           },
+          "lovFields": {
+            "DISTRIBUTOR_CODE": {
+              "masterName": "sl_mst_distributor",
+              "columnsRequired": "distributor_code, distributor_name"
+            }
+          },
+          "uniqueRowIdentifier": "unique_code",
+          "uniqueDealerIdentifier":  "external_entity_code"
+        }
+      
+        
+      ]
+    }
+  }
+  

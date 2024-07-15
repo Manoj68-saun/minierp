@@ -1,0 +1,74 @@
+
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "sl_trans_sauda_hdr",
+          "responseFieldName": "SaudatHeader",
+          "fieldsRequired": "sauda_code, dealer_code, sauda_date, sauda_quality, sauda_qty, sauda_remark, sauda_rate, cust_code, item_code, actual_qty, item_cat_code, freight_type_code, uom_code",
+          "uniqueSaudaIdentifier": "sauda_code",
+          "uniqueRowIdentifier": "sauda_code"
+        }
+    
+       
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "SaudatHeader",
+          "tableName": "sl_trans_sauda_hdr",
+          "fieldsRequired": {
+            
+           "sauda_code":"string", 
+           "dealer_code":"number", 
+           "sauda_date":"date",
+           "sauda_quality":"number",
+           "sauda_qty":"number",
+           "sauda_remark":"string", 
+           "sauda_rate":"number", 
+           "cust_code":"number",
+           "item_code":"number",   
+           "actual_qty":"number", 
+           "item_cat_code":"number",
+           "freight_type_code":"number",
+           "uom_code":"number"
+           
+          },
+          "lovFields": {
+            "DEALER_CODE": {
+              "masterName": "SL_MST_EXTERNAL_ENTITY",
+              "columnsRequired": "external_entity_code, external_entity_name"
+            },
+            "CUST_CODE": {
+              "masterName": "sl_mst_distributor",
+              "columnsRequired": "distributor_code, distributor_name"
+            },
+            "ITEM_CODE": {
+                "masterName": "sl_mst_item",
+                "columnsRequired": "item_code, item_name"
+            },
+            "SAUDA_QUALITY": {
+                "masterName": "sl_mst_quality",
+                "columnsRequired": "quality_code, quality"
+            },
+            "ITEM_CAT_CODE": {
+                "masterName": "sl_mst_item_category",
+                "columnsRequired": "item_category_code, item_category"
+            },
+            "FREIGHT_TYPE_CODE": {
+                "masterName": "sl_mst_freight_type",
+                "columnsRequired": "freight_type_code, freight_type"
+            }
+
+        },
+          "uniqueRowIdentifier": "sauda_code",
+          "uniqueSaudaIdentifier": "sauda_code"
+        }
+    
+       
+        
+      ]
+    }
+  }
+  

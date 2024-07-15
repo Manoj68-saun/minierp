@@ -1,0 +1,28 @@
+{
+  "name": "imaxpart5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.6.0",
+    "helmet": "^6.0.0",
+    "jimp": "^0.3.5",
+    "jsonwebtoken": "^9.0.0",
+    "path": "^0.12.7",
+    "pdf-to-base64": "^1.0.3",
+    "pdfmake": "^0.2.6",
+    "pg": "^8.8.0",
+    "xss-clean": "^0.1.1"
+  }
+}

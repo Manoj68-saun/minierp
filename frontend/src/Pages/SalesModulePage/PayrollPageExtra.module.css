@@ -1,0 +1,19 @@
+.SiteLayout{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: transparent;
+    width: max-content;
+}
+
+.Sider{
+    background-color: rgba(255, 255, 255, 0.863);  
+    backdrop-filter: blur(20px);
+    transition: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+.Sider:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+

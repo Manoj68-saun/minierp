@@ -1,0 +1,186 @@
+.PGreet{
+    text-align: left;
+    margin: 1rem 1rem 0rem 1rem;
+    font-size: 1.2rem;
+    font-weight: medium;
+    color: #1F3247;
+}
+
+.ProfileButton{
+    text-align: center;
+    white-space: nowrap;
+    color: #355576;
+    width: 80%;
+    font-weight : 900;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 40px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-top: 2rem !important;
+    background-color: #79caf3c7;
+}
+.SiteLayoutBackground{
+    justify-content: space-between !important;
+    margin: 1rem 0rem 0rem 0rem;
+    padding: 0;
+}
+.Col{
+    margin: 0.5rem 0.5rem 0.5rem 0rem !important;
+    transition: 0.3sec;
+    height: 16rem;
+    padding: 0rem 0.5rem;
+    width: 100% !important;
+    display: flex !important;
+    background-color: transparent;
+}
+
+.ColC{
+    /* margin: 0.5rem 0.5rem 0.5rem 0rem !important; */
+    transition: 0.3sec;
+    padding: 0rem 0.5rem;
+    width: 100% !important;
+    display: flex !important;
+    height: 21rem;
+    background-color: transparent;
+}
+
+.PCard{
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0.3s ease-out;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+
+}
+
+.Icon{
+    margin: 0rem 1rem;
+    font-size: 1rem;
+    color: #1F3247;
+}
+.Label{
+    font-weight: bolder !important;
+    color: #2EA2EC;
+    text-align: left;
+    font-size: 0.6rem;
+}
+
+.Name{
+    font-weight: bolder !important;
+    color: #1777C4;
+    font-size: 1rem;
+    margin: 1.5rem 0rem 2rem 0rem;
+}
+
+.PCard:hover{
+    box-shadow: rgba(17, 17, 26, 0.233) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.ColX{
+    margin: 0.5rem 0rem 0.5rem 0rem !important;
+    transition: 0.3sec;
+    padding: 0rem 0.5rem;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+    background-color: transparent;
+    
+}
+
+.Card{
+    width: 100% !important;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0.3s ease-out;
+    /* background-color: white; */
+    /* background-color: ; */
+    overflow: hidden;
+}
+
+.Card:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 8px 24px, rgba(100, 100, 111, 0.2) 0px 16px 56px, rgba(100, 100, 111, 0.2) 0px 24px 80px;
+}
+
+.Title{
+    text-align: left;
+    color: #1F3247;
+    font-weight: bold;
+}
+
+.Data1{
+    color: black;
+    width: 100% !important;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+}
+
+.Data2{
+    color: black;
+    width: 100% !important;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: left;
+    margin-top: 0.7rem;
+}
+
+.Data2:hover{
+    font-weight: bolder;
+    color: white;
+}
+.DataCol{
+    color: black;
+    text-align: right;
+    font-size: 0.8rem;
+    /* border-style: none solid none none;
+    border-color: #BDBABA;
+    border-width: 2px; */
+}
+
+
+@media only screen and (min-width: 992px){
+
+    .PGreet{
+        text-align: left;
+        margin: 1rem 1rem 0rem 1rem;
+        font-size: 1.5rem;
+        font-weight: medium;
+    }
+
+    .Col{
+        margin: 0.5rem 0rem 0.5rem 0rem !important;
+        padding: 0rem 0.5rem;
+        transition: 0.3sec;
+        height: 16rem;
+    }
+
+    .SiteLayoutBackground{
+        margin: 1rem 0rem 1rem 0.5rem;
+    }
+
+    .Card:hover{
+        transform: translateY(-0.5rem) scale(1.005);
+    }
+
+    .Data1{
+        /* margin-top: 1rem; */
+        font-size: 1.7rem;
+        font-weight: bold;
+        /* margin-bottom: 1rem; */
+    }
+
+    .Data2{
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+}

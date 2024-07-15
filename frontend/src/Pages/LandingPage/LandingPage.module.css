@@ -1,0 +1,378 @@
+.LandLogo{
+    width : 7rem;
+    height : 6.5rem; 
+    margin : auto;
+    transition: 0.3sec;
+}
+
+.LandDiv{
+    background-color : transparent;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+.LandH2{
+    color : #1F3247;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 2rem;
+    padding-top: 2.5rem;
+    
+}
+
+.LandP{
+    
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: -0.58px;
+    line-height: 0.9rem;
+    
+}
+
+.LandButton{
+    margin-top: 3rem;
+}
+
+.Create{
+    text-align: center;
+    white-space: nowrap;
+    color: #355576;
+    width: 60%;
+    font-weight : 600;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    letter-spacing: -0.54px;
+    line-height: 2rem;
+    border-radius: 9px;
+    background-color: white;
+    border: none;
+    outline: none;
+}
+.Create:hover{
+    box-shadow: 2px 2px 4px 4px rgba(58, 57, 57, 0.103), 0 3px 6px 0 rgba(112, 111, 111, 0.1);
+}
+.Create:focus{
+    outline: none;
+}
+
+@media only screen and (min-width: 500px) and (orientation:portrait){
+    .LandLogo{
+        width : 8rem;
+        height : 8rem; 
+        margin : auto;
+        /* margin-top: 3rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 3.5rem;
+        
+    }
+    
+    .LandP{
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1rem;
+        
+    }
+    
+    .LandButton{
+        margin-top: 4rem;
+    }
+
+    .Create{
+        width: 40%;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 500px) and (orientation:landscape){
+    .LandLogo{
+        width : 8rem;
+        height : 8rem; 
+        margin : auto;
+        /* margin-top: 4.5rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 3.5rem;
+        
+    }
+    
+    .LandP{
+        
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1rem;
+        
+    }
+    
+    .Create{
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (min-width: 600px) and (orientation:landscape){
+    .LandLogo{
+        width : 8rem;
+        height : 8rem; 
+        margin : auto;
+        margin-top: 6.5rem;
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 3.5rem;
+        
+    }
+    
+    .LandP{
+        
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1rem;
+        
+    }
+    
+    .Create{
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation:portrait){
+    .LandLogo{
+        width : 11rem;
+        height : 10rem; 
+        margin : auto;
+        /* margin-top: 5rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 3.5rem;
+        
+    }
+    
+    .LandP{
+        
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1rem;
+        
+    }
+    
+    .Create{
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation:landscape){
+    .LandLogo{
+        width : 9rem;
+        height : 8rem; 
+        margin : auto;
+        /* margin-top: 5rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 3.5rem;
+        
+    }
+    
+    .LandP{
+        
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1rem;
+        
+    }
+    
+    .Create{
+        width: 30%;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 897px) {
+    .LandLogo{
+        width : 9.5rem;
+        height : 9rem; 
+        margin : auto;
+        /* margin-top: 7rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 3.5rem;
+        
+    }
+    
+    .LandP{
+        
+        font-size: 1.1rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1.3rem;
+        
+    }
+    
+    .Create{
+        padding: 0.3rem 0rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .LandLogo{
+        width : 12rem;
+        height : 10rem; 
+        margin : auto;
+        /* margin-top: 7rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 4.5rem;
+        padding-bottom: 0.3rem;
+    }
+    
+    .LandP{
+        
+        font-size: 1.3rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1.3rem;
+        
+    }
+    
+    .Create{
+        padding: 0.5rem 0rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .LandLogo{
+        width : 12rem;
+        height : 10rem; 
+        margin : auto;
+        /* margin-top: 6.3rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 2rem;
+        padding-top: 4.1rem;
+        
+    }
+    
+    .LandP{
+        
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 1.3rem;
+        
+    }
+    
+    .Create{
+        font-size: 1.2rem;
+        width: 20%;
+        padding: 0.7rem 0rem !important;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .LandLogo{
+        width : 15rem;
+        height : 13rem; 
+        margin : auto;
+        /* margin-top: 7rem; */
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 2.2rem;
+        padding-top: 5.5rem;        
+    }
+    
+    .LandP{
+        font-size: 1.6rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 2rem;
+    }
+    
+    .LandButton{
+        margin-top: 4.5rem;
+    }
+    .Create{
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .LandLogo{
+        width : 23rem;
+        height : 21rem; 
+        margin : auto;
+        margin-top: 9rem;
+    }
+    
+    .LandH2{
+        color : #1F3247;
+        font-size: 4.2rem;
+        font-weight: 600;
+        line-height: 4.2rem;
+        padding-top: 7.5rem;
+        
+    }
+    
+    .LandP{
+        font-size: 3rem;
+        font-weight: 300;
+        letter-spacing: -0.58px;
+        line-height: 4.3rem;
+        padding-top: 1.5rem;
+        
+    }
+    
+    .Create{
+        font-size: 0.7rem;
+    }
+}
+  

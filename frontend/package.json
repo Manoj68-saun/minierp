@@ -1,0 +1,92 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.1.4",
+    "@chakra-ui/react": "^2.8.1",
+    "@devexpress/dx-core": "^4.0.6",
+    "@devexpress/dx-react-chart": "^4.0.6",
+    "@devexpress/dx-react-chart-material-ui": "^3.0.5",
+    "@devexpress/dx-react-core": "^4.0.6",
+    "@devexpress/dx-react-grid": "^4.0.6",
+    "@devexpress/dx-react-grid-bootstrap4": "^4.0.5",
+    "@devexpress/dx-react-grid-material-ui": "^4.0.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@google-pay/button-react": "^3.0.10",
+    "@iconscout/react-unicons": "^2.0.2",
+    "@material-ui/core": "^4.12.4",
+    "@mui/material": "^5.13.7",
+    "@mui/x-data-grid": "^5.17.24",
+    "@mui/x-date-pickers": "^6.10.1",
+    "@paypal/react-paypal-js": "^8.1.1",
+    "@react-google-maps/api": "^2.19.2",
+    "@react-oauth/google": "^0.11.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.6.4",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "dayjs": "^1.11.9",
+    "devextreme": "^22.1.5",
+    "devextreme-react": "^22.1.5",
+    "dist": "^0.1.2",
+    "file-saver": "^2.0.5",
+    "geolib": "^3.3.4",
+    "html2pdf.js": "^0.10.1",
+    "install": "^0.13.0",
+    "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
+    "npm": "^9.8.1",
+    "primeicons": "^6.0.1",
+    "primereact": "^9.6.2",
+    "react": "^18.2.0",
+    "react-custom-scrollbars-2": "^4.5.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-icon": "^1.0.0",
+    "react-icons": "^4.10.1",
+    "react-modal": "^3.16.1",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
+    "react-to-print": "^2.14.15",
+    "web-vitals": "^2.1.4",
+    "ws": "^8.14.2"
+  },
+  "scripts": {
+    "start": "set PORT=3005 &&  react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "x.x.x",
+    "eslint": "^8.53.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

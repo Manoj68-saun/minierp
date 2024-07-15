@@ -1,0 +1,101 @@
+
+{
+    "getNdelete": {
+      "dataSources": [
+        {
+          "tableName": "sl_mst_gauge_diff_hdr",
+          "responseFieldName": "GaugeHeader",
+          "fieldsRequired": "a_code, g_code, g_desc, item_code, timestamptostring(norm_date::timestamp)norm_date, timestamptostring(expire_date::timestamp)expire_date, remarks",
+          "uniqueGaugeIdentifier": "a_code",
+          "uniqueRowIdentifier": "a_code"
+        },
+        {
+          "tableName":"sl_mst_gauge_diff_det",
+          "responseFieldName":"GaugeSizeDetail",
+          "fieldsRequired":"unique_id, a_code, size_code, size_amt",
+          "uniqueGaugeIdentifier":"a_code",
+          "uniqueRowIdentifier": "unique_id"
+        },
+        {
+            "tableName":"sl_mst_gauge_grade",
+            "responseFieldName":"GaugeGradeDetail",
+            "fieldsRequired":"unique_id, a_code, grade_code, g_amount",
+            "uniqueGaugeIdentifier":"a_code",
+            "uniqueRowIdentifier": "unique_id"
+        }
+       
+      ]
+    },
+    "createNupdate": {
+      "fieldNames": [
+        {
+          "responseFieldName": "GaugeHeader",
+          "tableName": "sl_mst_gauge_diff_hdr",
+          "fieldsRequired": {
+            
+           "a_code":"string", 
+           "g_code":"string", 
+           "g_desc":"string",
+           "item_code":"number",
+           "norm_date":"date",
+           "expire_date":"date", 
+           "remarks":"string"
+          
+          },
+          "lovFields": {
+            "ITEM_CODE": {
+              "masterName": "sl_mst_item",
+              "columnsRequired": "item_code, item_name",
+              "whereClause": "item_code NOT IN (SELECT item_code FROM sl_mst_gauge_diff_hdr)"
+            },
+            "SIZE_CODE": {
+              "masterName": "sl_mst_size",
+              "columnsRequired": "size_code, item_size"
+            },
+            "QUALITY": {
+              "masterName": "sl_mst_quality",
+              "columnsRequired": "quality_code, quality"
+            }
+          
+          },
+          "uniqueRowIdentifier": "a_code",
+          "uniqueGaugeIdentifier": "a_code"
+        },
+    {
+       
+      "responseFieldName": "GaugeSizeDetail",
+      "tableName": "sl_mst_gauge_diff_det",
+      "typeArray": true,
+      "fieldsRequired": {
+       "a_code":"number", 
+       "size_code":"number",
+       "size_amt":"number"
+       
+    },
+   
+    "uniqueRowIdentifier": "unique_id",
+    "uniqueGaugeIdentifier": "a_code"
+  },
+  {
+       
+    "responseFieldName": "GaugeGradeDetail",
+    "tableName": "sl_mst_gauge_grade",
+    "typeArray": true,
+    "fieldsRequired": {
+     "a_code":"number", 
+     "grade_code":"number",
+     "g_amount":"number"
+     
+  },
+ 
+  "uniqueRowIdentifier": "a_code",
+  "uniqueGaugeIdentifier": "a_code"
+}
+
+
+       
+        
+      ]
+    }
+  }
+  
